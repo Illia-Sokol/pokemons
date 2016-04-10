@@ -104,7 +104,7 @@
 	border: 2px solid black;
 	padding: 10px;
 	position: fixed;
-	min-width: 20%;
+	min-width: 17.5%;
 	background: #fff;
 }
 
@@ -136,3 +136,51 @@ tr>td {
 	width: 60%;
 }
 
+
+@media screen and (max-width: 1200px) {
+  .wrapper-right {
+    width: 24%;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .wrapper-right {
+    width: 220px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper-right {
+    width: 43%;
+  }
+
+  .right-template__name {
+	font-size: 20px;
+	}
+
+	.container__header {
+		width: 70%;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.wrapper-right {
+    width: 40%;
+  }
+
+	.picture-template__name {
+		font-size:  18px;
+	}
+
+	.container__header {
+		width: 60%;
+	}
+
+	td {
+		font-size: 13px;
+	}
+
+	.btn {
+		margin: 1px 0;
+	}
+}
