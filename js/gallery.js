@@ -8,7 +8,6 @@ $(document).ready(function(){
 		colPokedex += 12;
 		initialPokedex += 12;
 		firstUlr = "http://pokeapi.co/api/v1/pokemon/?limit=" + colPokedex;
-		console.log(firstUlr);
 		createContent(firstUlr);
 	})
 	//create content
@@ -55,7 +54,13 @@ $(document).ready(function(){
 						src: 'http://pokeapi.co/media/img/'+ posId + '.png',
 						name: result.objects[j].name,
 						id: posId,
-						type: result.objects[j].types[0].name,
+						type: (function createType() {
+							if (result.objects[j].types.length == 1) {
+							return result.objects[j].types[0].name;
+						} else {
+							return result.objects[j].types[0].name + ',' + result.objects[j].types[1].name;
+						}
+						})(),
 						attack: result.objects[j].attack,
 						defense: result.objects[j].defense,
 						hp: result.objects[j].hp,
@@ -65,6 +70,11 @@ $(document).ready(function(){
 						weight: result.objects[j].weight,
 						totalMoves: result.objects[j].moves.length
 					}
+
+					// function createType () {
+						
+					// }
+					
 
 					var bigPicture = $('#right-template').html();
 					var templateBigPicture = Handlebars.compile(bigPicture);
