@@ -73,10 +73,8 @@ $(document).ready(function(){
 					$('#view').html(htmlBigPicture);
 				}
 			}
-
 			// stop click to button
 			$('.btn').click( function(event) {
-				console.log('hello illia');
 				event.stopPropagation()
 			});
 		});

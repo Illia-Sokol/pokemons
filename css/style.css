@@ -79,6 +79,22 @@
 	background: #cc99ff;
 }
 
+.btn {
+	color: white;
+}
+
+.btn:hover {
+	transform: scale(1.02);
+	color: white;
+	box-shadow: 0px 2px 5px #888;
+}
+
+#loadMore {
+	margin: 20px auto;
+	width: 95%;
+	font-size: 22px;
+}
+
 /* table */
 .wrapper-right {
 	border: 2px solid black;
