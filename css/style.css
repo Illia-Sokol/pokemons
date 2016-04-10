@@ -67,6 +67,18 @@
 	background: #ff0066;
 }
 
+.electric {
+	background: gold;
+}
+
+.ground {
+	background: brown;
+}
+
+.fairy {
+	background: #cc99ff;
+}
+
 /* table */
 .wrapper-right {
 	border: 2px solid black;
