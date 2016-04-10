@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<<<<<<< HEAD
+	<div class="container">
+		<h1 class="container__header">Pokedex</h1>
+=======
+	
+
+	<div class="container">
+		
+		<h1 class="container__header">Pokedex</h1>
+		
+>>>>>>> cb1d0766b37301fd07b1fadd80397f6c1a669420
+		<div class="row">
+			<div class="col-xs-offset-1 col-xs-7 left-column">
+				<div id="picture"></div>
+				<button type="button" class="btn btn-info btn-block" id="loadMore">Load More</button>
+			</div>
+			<div class="col-xs-3 right-column">
+				<div id="view"></div>
+			</div>
+		</div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> cb1d0766b37301fd07b1fadd80397f6c1a669420
+	</div>
+
+	<script id="my-template" type="text/x-handlebars-template">
+		<h4>{{{name}}}</h4>
+	</script>
+
+	<script id="picture-template" type="text/x-handlebars-template">
+		<div class="col-xs-6 col-md-4" >
+			<div class="thumbnail" id={{id}}>
+<<<<<<< HEAD
+				<img src="{{src}}" class="img-template">
+=======
+				<img src="{{some}}" class="img-template">
+>>>>>>> cb1d0766b37301fd07b1fadd80397f6c1a669420
+				<div class="caption">
+					<p class="picture-template__name">{{name}}</p>
+					<p>
+						{{#each type}}
+						<button class="btn btn-primary {{result}}" role="button" id="myButton">{{result}}</button> 
+						{{/each}}	
+					</p>
+				</div>
+			</div>
+		</div>
+	</script>
+
+	<script id="right-template" type="text/x-handlebars-template">
+		<div class="wrapper-right">
+			<img src="{{src}}" alt="" class="view__image">
+			<p class="right-template__name">{{name}}{{id}}</p>
+			<table>
+				<tr>
+					<td>Type</td>
+					<td>{{type}}</td>
+				</tr>
+				<tr>
+					<td>Attack</td>
+					<td>{{attack}}</td>
+				</tr>
+				<tr>
+					<td>Defense</td>
+					<td>{{defense}}</td>
+				</tr>
+				<tr>
+					<td>HP</td>
+					<td>{{hp}}</td>
+				</tr>
+				<tr>
+					<td>SP Attack</td>
+					<td>{{spAttack}}</td>
+				</tr>
+				<tr>
+					<td>SP Defense</td>
+					<td>{{spDefense}}</td>
+				</tr>
+				<tr>
+					<td>Speed</td>
+					<td>{{speed}}</td>
+				</tr>
+				<tr>
+					<td>Weight</td>
+					<td>{{weight}}</td>
+				</tr>
+				<tr>
+					<td>Total moves</td>
+					<td>{{totalMoves}}</td>
+				</tr>
+<<<<<<< HEAD
+=======
+
+>>>>>>> cb1d0766b37301fd07b1fadd80397f6c1a669420
+			</table>
+		</div>
+	</script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/handlebars-v4.0.5.js"></script>
+	<script src="js/gallery.js"></script>
+<<<<<<< HEAD
+</body>
+</html>
+=======
+
+</body>
+</html>
+>>>>>>> cb1d0766b37301fd07b1fadd80397f6c1a669420
