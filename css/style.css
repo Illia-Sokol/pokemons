@@ -136,7 +136,6 @@ tr>td {
 	width: 60%;
 }
 
-
 @media screen and (max-width: 1200px) {
   .wrapper-right {
     width: 24%;
@@ -147,6 +146,10 @@ tr>td {
   .wrapper-right {
     width: 220px;
   }
+
+  .img-template {
+		width: 60%;
+	}
 }
 
 @media screen and (max-width: 768px) {
@@ -183,4 +186,99 @@ tr>td {
 	.btn {
 		margin: 1px 0;
 	}
+}
+
+/* POKEDEX CONTAINER*/
+#wait {
+	display: none;
+	width:100vw;
+	height:100vh;
+	background: rgba(0, 0, 0, .5); 
+	position: fixed; 
+	z-index: 999;
+}
+
+/*POKEDEX*/
+@-webkit-keyframes spinning {
+  0% {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes color-change {
+	0%, 20%, 40%, 60%, 100% {
+	    background-color: #fff;
+	}
+	10%, 30%, 50%, 70%, 90% {
+	    background-color: #f00;
+	}
+}
+
+/* pokeball container */
+#StefTastan #pokeball-container {
+	width: 10em;
+	height: 10em;
+	position: absolute;
+	left: 45%;
+	top: 30%;
+  -webkit-animation: spinning 3s infinite;
+}
+
+#StefTastan #pokeball { 
+	width: 10em;
+	height: 10em;
+	background-color: #fff;
+	border-radius: 50%;
+	position: relative;
+	overflow: hidden;
+}
+
+#StefTastan #pokeball::before {
+	content: '';
+	background-color: red;
+	border-radius: 5em 5em 0 0;
+	width: 10em;
+	height: 5em;
+	position: absolute;
+}
+
+#StefTastan #pokeball .pokeball-details {
+	width: 10em;
+	height: 1em;
+	background-color: #333;
+	position: absolute;
+	top: 4.5em;
+}
+
+/* the pokemon's button or whatever it is */
+#StefTastan #pokeball .pokeball-details::before {
+	content: '';
+	width: 3.5em;
+	height: 3.5em;
+	border-radius: 50%;
+	background-color: #333;
+	position: absolute;
+	top: -1.25em;
+	left: 3.25em;
+	z-index: 200;
+}
+
+#StefTastan #pokeball .pokeball-details::after {
+	content: '';
+	width: 2.6em;
+	height: 2.6em;
+	border: 0.35em solid white;
+	border-radius: 50%;
+	background-color: #fff;
+	position: absolute;
+	top: -.8em;
+	left: 3.7em;
+	margin: 0 auto;
+	z-index: 250;
+	-webkit-animation: color-change 3s infinite;
 }

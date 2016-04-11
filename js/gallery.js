@@ -2,6 +2,8 @@ $(document).ready(function(){
 	var colPokedex = 12;
 	var initialPokedex = 0;
 	var firstUlr = "http://pokeapi.co/api/v1/pokemon/?limit=" + colPokedex;
+
+	loadingView();
 	createContent(firstUlr);
 
 	$('#loadMore').click(function() {
@@ -9,11 +11,11 @@ $(document).ready(function(){
 		initialPokedex += 12;
 		firstUlr = "http://pokeapi.co/api/v1/pokemon/?limit=" + colPokedex;
 		createContent(firstUlr);
+
 	})
 	//create content
 	function createContent(url) {			
 		$.getJSON(url, function(result){
-			console.log(result.meta.next);
 			nextUrl = result.meta.next;
 			var myPicture;
 			for (var i = initialPokedex; i < colPokedex ; i++) {
@@ -56,10 +58,10 @@ $(document).ready(function(){
 						id: posId,
 						type: (function createType() {
 							if (result.objects[j].types.length == 1) {
-							return result.objects[j].types[0].name;
-						} else {
-							return result.objects[j].types[0].name + ',' + result.objects[j].types[1].name;
-						}
+								return result.objects[j].types[0].name;
+							} else {
+								return result.objects[j].types[0].name + ',' + result.objects[j].types[1].name;
+							}
 						})(),
 						attack: result.objects[j].attack,
 						defense: result.objects[j].defense,
@@ -69,12 +71,7 @@ $(document).ready(function(){
 						speed: result.objects[j].speed,
 						weight: result.objects[j].weight,
 						totalMoves: result.objects[j].moves.length
-					}
-
-					// function createType () {
-						
-					// }
-					
+					}					
 
 					var bigPicture = $('#right-template').html();
 					var templateBigPicture = Handlebars.compile(bigPicture);
@@ -83,10 +80,20 @@ $(document).ready(function(){
 					$('#view').html(htmlBigPicture);
 				}
 			}
-			// stop click to button
+			// stop click to type button
 			$('.btn').click( function(event) {
 				event.stopPropagation()
 			});
+			
+		});
+	}
+	// loading view
+	function loadingView() {
+		$(document).ajaxStart(function(){
+			$("#wait").css("display", "block");
+		});
+		$(document).ajaxComplete(function(){
+			$("#wait").css("display", "none");
 		});
 	}
 });
