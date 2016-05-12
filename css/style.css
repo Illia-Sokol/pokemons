@@ -1,5 +1,6 @@
 .container {
 	background: #eee;
+	min-height: 100vh;
 }
 
 .container__header,
